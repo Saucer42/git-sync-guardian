@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-sync-guardian"
+version = "0.1.0"
+description = "A safety wrapper around destructive git operations: snapshot untracked files before they can be silently deleted, then verify and auto-restore."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Saucer42" }]
+keywords = ["git", "safety", "untracked", "backup", "snapshot", "clean", "reset"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/saucer42/git-sync-guardian"
+Repository = "https://github.com/saucer42/git-sync-guardian"
+
+[project.scripts]
+gsg = "gsg.cli:main"
+
+[tool.setuptools]
+packages = ["gsg"]
