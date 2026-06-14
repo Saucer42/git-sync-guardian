@@ -1,0 +1,12 @@
+# git-sync-guardian configuration (copy to `.gsg.toml` at your repo root).
+# All keys are optional; omitted keys fall back to the conservative defaults.
+
+[policy]
+# Subcommands that trigger snapshot + verify with a lightweight confirm.
+guarded_subcommands = ["pull", "merge", "fetch", "rebase"]
+
+# Subcommands always blocked behind the override token (any variant).
+blocked_subcommands = ["clean"]
+
+# The verbatim phrase a user must type to override a blocked command.
+override_token = "yes, override gsg guardrail"
